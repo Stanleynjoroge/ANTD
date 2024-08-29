@@ -1,7 +1,7 @@
 import React from "react";
 import { Menu, Layout, Button } from "antd";
 import { NavigationsBottom, NavigationsTop } from "./Navigation";
-
+import{Outlet}from "react-router-dom";
 const { Header, Sider, Content, Footer } = Layout;
 
 const MyLayout = () => {
@@ -70,8 +70,20 @@ const MyLayout = () => {
       </Sider>
 
       <Layout style={{ padding: "24px 0" }}>
-        <Content style={{ paddingTop: "50px" }}>Content</Content>
-        <Footer style={{ textAlign: "center" }}>Footer</Footer>
+        <Content style={{ paddingTop: "50px" }}><Outlet/>
+
+        </Content>
+        <Footer
+            style={{
+              textAlign: 'center',
+              backgroundColor: 'whitesmoke',
+              padding: '3px 0',
+            }}
+          >
+            <span style={{ fontSize: '12px' }}>
+              IMS ©{new Date().getFullYear()} Powered By Stanley
+            </span>
+          </Footer>
       </Layout>
     </Layout>
   );
