@@ -14,7 +14,7 @@ export const NavigationsTop=[
         key: 'Dashboard',
         icon: <DashboardOutlined />,
         label: 'Dashboard',
-        path: '/',
+        path: '/Dashboard',
       },
       {
         key: 'stockpile',
