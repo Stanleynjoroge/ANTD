@@ -1,3 +1,3 @@
-const Sayname = (name) => {
-  console.log("HI " + name);
-};
+function Sayname(name) {
+  console.log(`HI ${name}`);
+}
