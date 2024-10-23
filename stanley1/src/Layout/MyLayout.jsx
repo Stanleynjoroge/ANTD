@@ -13,7 +13,7 @@ const MyLayout = () => {
     const item = [...NavigationsTop, ...NavigationsBottom].find(
       (navItem) => navItem.key === key
     );
-    
+
     if (item && item.path) {
       navigate(item.path);
     }
@@ -37,68 +37,62 @@ const MyLayout = () => {
           borderBottom: "1px solid #333",
         }}
       ></Header>
-<div
- style={{
- 
- }}
->
-<Sider
-        style={{
-          display: "flex",
-          alignItems: "space-between", // Updated to flex-start for correct alignment
-          flexDirection: "column", // Ensure items stack vertically
-          gap: "20px", // Adjust gap to fit your design
-          position: "sticky",
-          marginTop: "60px",
-          backgroundColor: "white",
-          
-        }}
-        width={250}
-
-      >
-        <Menu
+      <div style={{}}>
+        <Sider
           style={{
             display: "flex",
-            flexDirection: "column",
-            marginBottom: "4px",
+            alignItems: "space-between", // Updated to flex-start for correct alignment
+            flexDirection: "column", // Ensure items stack vertically
+            gap: "20px", // Adjust gap to fit your design
+            position: "sticky",
+            marginTop: "60px",
             backgroundColor: "white",
-            fontWeight: 700,
+            height: "100%",
           }}
-          mode="inline"
-          items={NavigationsTop}
-          onClick={handleMenuClick}
-        />
+          width={250}
+        >
+          <Menu
+            style={{
+              display: "flex",
+              flexDirection: "column",
+              marginBottom: "4px",
+              backgroundColor: "white",
+              fontWeight: 700,
+            }}
+            mode="inline"
+            items={NavigationsTop}
+            onClick={handleMenuClick}
+          />
 
-        <Menu
-          style={{
-            display: "flex",
-            flexDirection: "column",
-            alignSelf: "flex-end",
-            marginBottom: "4px",
-            backgroundColor: "white",
-            fontWeight: 700,
-            position: "absolute", 
-          }}
-          mode="inline"
-          items={NavigationsBottom}
-          onClick={handleMenuClick} 
-        />
-      </Sider>
+          <Menu
+            style={{
+              display: "flex",
+              flexDirection: "column",
+              alignSelf: "flex-end",
+              marginBottom: "4px",
+              backgroundColor: "white",
+              fontWeight: 700,
+              position: "absolute",
+            }}
+            mode="inline"
+            items={NavigationsBottom}
+            onClick={handleMenuClick}
+          />
+        </Sider>
+      </div>
 
-</div>
-    
       <Layout style={{ padding: "24px 0" }}>
         <Content style={{ padding: 24, margin: 100, minHeight: 280 }}>
           <Outlet />
         </Content>
         <Footer
           style={{
-            textAlign: 'center',
-            backgroundColor: 'whitesmoke',
-            padding: '3px 0',
+            textAlign: "center",
+            backgroundColor: "whitesmoke",
+            padding: "3px 0",
           }}
         >
-          <span style={{ fontSize: '12px' }}>
+          <span style={{ fontSize: "12px" }}>
             IMS ©{new Date().getFullYear()} Powered By Stanley
           </span>
         </Footer>
